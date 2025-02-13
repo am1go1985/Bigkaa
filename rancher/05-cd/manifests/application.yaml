@@ -47,7 +47,7 @@ spec:
     http:
       paths:
       - path: /from-github
-        pathType: Prefix
+        pathType: Exact
         backend:
           service:
             name: nginx-service-from-github
