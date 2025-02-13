@@ -46,7 +46,7 @@ spec:
   - host: main.ept
     http:
       paths:
-      - path: /nginx-from-github
+      - path: /from-github
         pathType: Prefix
         backend:
           service:
