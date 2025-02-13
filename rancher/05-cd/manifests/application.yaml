@@ -3,18 +3,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment_from_github
+  name: nginx-deployment-from-github
   labels:
-    app: nginx_from_github
+    app: nginx-from-github
 spec:
   replicas: 8
   selector:
     matchLabels:
-      app: nginx_from_github
+      app: nginx-from-github
   template:
     metadata:
       labels:
-        app: nginx_from_github
+        app: nginx-from-github
     spec:
       containers:
       - name: nginx
@@ -25,10 +25,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service_from_github
+  name: nginx-service-from-github
 spec:
   selector:
-    app: nginx_from_github
+    app: nginx-from-github
   ports:
   - protocol: TCP
     port: 80
@@ -38,7 +38,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nginx-ingress_from_github
+  name: nginx-ingress-from-github
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
@@ -46,11 +46,11 @@ spec:
   - host: main.ept
     http:
       paths:
-      - path: /nginx_from_github
+      - path: /nginx-from-github
         pathType: Prefix
         backend:
           service:
-            name: nginx-service_from_github
+            name: nginx-service-from-github
             port:
               number: 80
 
