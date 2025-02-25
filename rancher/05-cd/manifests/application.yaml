@@ -6,8 +6,8 @@ metadata:
   name: nginx-deployment-from-github
   labels:
     app: nginx-from-github
-#spec:
-  replicas: 2
+spec:
+  replicas: 3
   selector:
     matchLabels:
       app: nginx-from-github
