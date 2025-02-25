@@ -1,13 +1,13 @@
-#---
+---
 
-apiVersion: apps/v1
+ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment-from-github
   labels:
     app: nginx-from-github
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: nginx-from-github
